@@ -38,7 +38,12 @@ Template.SeedShow.rendered = ->
       label:'無回答'
     }
   ]
-  myDoughnut = new Chart(document.getElementById('sample').getContext('2d')).Doughnut(doughnutData)
+  new_data = []
+  doughnutData.filter (data)->
+    data.value > 0
+  if document.getElementById('sample')
+    myDoughnut = new Chart(document.getElementById('sample').getContext('2d')).Doughnut(doughnutData)
+
   if !localStorage[Session.get('current_seed_id')]
     Seed.update({_id:Session.get('current_seed_id')},{$inc:{none:1}})
     localStorage[Session.get('current_seed_id')] = 'none'

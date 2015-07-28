@@ -15,21 +15,20 @@ Seed.attachSchema new SimpleSchema {
     max: 100
   yes:
     type: Number
-    autoValue:->
-      1
   no:
     type: Number
-    autoValue:->
-      1
   none:
     type: Number
-    autoValue:->
-      1
   user:
     type: String
     autoValue:->
       @userId
 }
+
+Seed.before.insert (userId, seed)->
+  seed.yes = 0
+  seed.no = 0
+  seed.none = 0
 
 Seed.allow
   insert: (userId, doc) ->
