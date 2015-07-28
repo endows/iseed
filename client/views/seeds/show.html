@@ -3,33 +3,28 @@
     <div class="row-fluid">
       <div class='col-md-10'>
         <div class='list-group'>
-
           <div class='list-group-item'>
             <p>
               だれのためのサービス？
             </p>
             <h2>{{who}}</h2>
           </div>
-
           <div class='list-group-item'>
             <p>
               どんな問題を解決する？
             </p>
             <h2>{{what}}</h2>
           </div>
-
-
           <div class='list-group-item'>
             <p>
               どうやって解決する？
             </p>
             <h2>{{how}}</h2>
           </div>
-
-
           <div class='list-group-item'>
             {{#if voted}}
             <p>調査結果</p>
+            <canvas id="sample" height="500" width="500"></canvas>
             <h1>
               <small>使ってみたい:</small>{{yes}}
               <small>人</small>
@@ -44,17 +39,14 @@
             </h1>
             {{else}}
             <span>このサービスを使ってみたいですか？</span>
-            <button id='yes' class='btn btn-primary'>YES</button>
-            <button id='no' class='btn btn-primary'>No</button>
+            <div class='text-center'>
+              <button id='yes' class='btn btn-primary btn-lg'>YES</button>
+              <button id='no' class='btn btn-danger btn-lg'>No</button>
+            </div>
             {{/if}}
           </div>
-
         </div>
-
-
-
       </div>
-
     </div>
   </div>
 </template>
