@@ -1,25 +1,33 @@
 <template name="SeedIndex">
   <div class="container">
     <div class="row-fluid">
-      <h1>Seeds</h1>
-      <ul class="list-group">
+      <h1 class='text-center'>
+        <ruby>
+          種
+          <rt>シード</rt>
+        </ruby>
+        ランキング
+      </h1>
+
+      <ol class="list-group">
         {{#each this}}
-          <li class="list-group-item">
-            <a target=”_blank” href="{{pathFor "seed"}}">{{_id}}</a>
-            <button class="btn btn-danger btn-xs" data-action="delete" style="float:right">
-              <span class="glyphicon glyphicon-trash"></span>
-              Delete
-            </button>
-            <a href="{{pathFor "edit_seed" this}}" class="btn btn-xs" style="float:right; margin-right: 20px;">
-              <span class="glyphicon glyphicon-edit"></span>
-              Edit
-            </a>
-          </li>
+        <p>
+          {{index}}
+        </p>
+        <li class='list-group-item'>
+          <a target='_blank' href="/seeds/{{_id}}">
+            <h1>
+              {{who}}
+              <small>の</small>
+              {{what}}
+              <small>を</small>
+              <small>解決するアイディア</small>
+            </h1>
+          </a>
+        </li>
         {{/each}}
-      </ul>
-      <a href="{{pathFor "new_seed"}}" class="btn btn-primary">
-        New Seed
-      </a>
+      </ol>
+
     </div>
   </div>
 </template>
