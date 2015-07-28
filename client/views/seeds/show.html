@@ -38,10 +38,16 @@
               <small>人</small>
             </h1>
             {{else}}
-            <span>このサービスを使ってみたいですか？</span>
+            <span>このアイディア、Good!と思いますか？</span>
             <div class='text-center'>
               <button id='yes' class='btn btn-primary btn-lg'>YES</button>
               <button id='no' class='btn btn-danger btn-lg'>No</button>
+            </div>
+            <br />
+            <div class="progress">
+              <div id='time_bar' class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                <span class="sr-only">60% Complete</span>
+              </div>
             </div>
             {{/if}}
           </div>

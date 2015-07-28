@@ -1,3 +1,4 @@
+Session.setDefault 'time',100
 Template.SeedShow.helpers
   'voted':->
     if localStorage[Session.get('current_seed_id')] == 'voted'
@@ -18,6 +19,11 @@ Template.SeedShow.events
 
 
 Template.SeedShow.rendered = ->
+  time = 100
+  setInterval ->
+    time = time - 1
+    document.querySelector('#time_bar').style.width = "#{time}%"
+  ,100
   seed = Seed.findOne Session.get('current_seed_id')
   doughnutData = [
     {
@@ -41,7 +47,3 @@ Template.SeedShow.rendered = ->
     data.value > 0
   if document.getElementById('sample')
     myDoughnut = new Chart(document.getElementById('sample').getContext('2d')).Doughnut(doughnutData)
-
-  if localStorage[Session.get('current_seed_id')] not 'voted'
-    Seed.update({_id:Session.get('current_seed_id')},{$inc:{none:1}})
-    localStorage[Session.get('current_seed_id')] = 'none'
