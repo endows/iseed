@@ -1,0 +1,11 @@
+<template name="SeedEdit">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>Edit Seed</h1>
+      {{#autoForm collection="Seed" doc=this type="update" id="edit-seed-form"}}
+        {{> SeedFields}}
+        <button type="submit" class="btn btn-primary">Update</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

@@ -1,0 +1,14 @@
+<template name="SeedNew">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>New Seed</h1>
+      {{#autoForm collection="Seed" type="insert" id="new-seed-form"}}
+        {{> SeedFields}}
+        <button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus"></span>
+          Create
+        </button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>
