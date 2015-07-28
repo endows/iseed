@@ -1,0 +1,11 @@
+<template name="UserEdit">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>Edit User</h1>
+      {{#autoForm collection="User" doc=this type="update" id="edit-user-form"}}
+        {{> UserFields}}
+        <button type="submit" class="btn btn-primary">Update</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

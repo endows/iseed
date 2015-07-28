@@ -1,0 +1,25 @@
+<template name="UserIndex">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>Users</h1>
+      <ul class="list-group">
+        {{#each this}}
+          <li class="list-group-item">
+            <a href="{{pathFor "user"}}">{{_id}}</a>
+            <button class="btn btn-danger btn-xs" data-action="delete" style="float:right">
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            </button>
+            <a href="{{pathFor "edit_user" this}}" class="btn btn-xs" style="float:right; margin-right: 20px;">
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            </a>
+          </li>
+        {{/each}}
+      </ul>
+      <a href="{{pathFor "new_user"}}" class="btn btn-primary">
+        New User
+      </a>
+    </div>
+  </div>
+</template>

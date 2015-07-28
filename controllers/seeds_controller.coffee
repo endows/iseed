@@ -1,6 +1,7 @@
 SeedsController = ApplicationController.extend
   waitOn: -> [
     Meteor.subscribe("seeds")
+    Meteor.subscribe("users")
   ]
 
   index: ->
