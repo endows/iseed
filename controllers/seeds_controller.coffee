@@ -5,7 +5,8 @@ SeedsController = ApplicationController.extend
   ]
 
   index: ->
-    @render "SeedIndex", data: Seed.find()
+    @render "SeedIndex", data: Seed.find().map (doc, index, cursor) ->
+      _.extend doc, index: index + 1
 
   show: ->
     Session.set 'current_seed_id',@params._id
