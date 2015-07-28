@@ -6,7 +6,15 @@ Template.SeedNew.helpers
   'how':->
     Session.get 'how'
 
-Template.SeedNew.events()
+Template.SeedNew.events
+  'keyup input':->
+    Session.set 'who', $('#who').val()
+    Session.set 'what', $('#what').val()
+    Session.set 'how', $('#how').val()
+  'keyup textarea':->
+    Session.set 'who', $('#who').val()
+    Session.set 'what', $('#what').val()
+    Session.set 'how', $('#how').val()
 
 AutoForm.hooks
   "new-seed-form":
