@@ -8,15 +8,13 @@ Template.SeedShow.helpers
 
 Template.SeedShow.events
   'click #yes':->
-    if localStorage[Session.get('current_seed_id')] != 'voted'
-      Seed.update({_id:Session.get('current_seed_id')},{$inc:{none:-1,yes:1}})
-      localStorage[Session.get('current_seed_id')] = 'voted'
-      location.reload()
+    Seed.update({_id:Session.get('current_seed_id')},{$inc:{yes:1}})
+    localStorage[Session.get('current_seed_id')] = 'voted'
+    location.reload()
   'click #no':->
-    if localStorage[Session.get('current_seed_id')] != 'voted'
-      Seed.update({_id:Session.get('current_seed_id')},{$inc:{none:-1,no:1}})
-      localStorage[Session.get('current_seed_id')] = 'voted'
-      location.reload()
+    Seed.update({_id:Session.get('current_seed_id')},{$inc:{no:1}})
+    localStorage[Session.get('current_seed_id')] = 'voted'
+    location.reload()
 
 
 Template.SeedShow.rendered = ->
@@ -44,6 +42,6 @@ Template.SeedShow.rendered = ->
   if document.getElementById('sample')
     myDoughnut = new Chart(document.getElementById('sample').getContext('2d')).Doughnut(doughnutData)
 
-  if !localStorage[Session.get('current_seed_id')]
+  if localStorage[Session.get('current_seed_id')] not 'voted'
     Seed.update({_id:Session.get('current_seed_id')},{$inc:{none:1}})
     localStorage[Session.get('current_seed_id')] = 'none'
