@@ -5,12 +5,15 @@ SeedsController = ApplicationController.extend
   ]
 
   index: ->
-    @render "SeedIndex", data: Seed.find().map (doc, index, cursor) ->
-      _.extend doc, index: index + 1
-
+    document.title = 'iSeed'
+    @render "SeedIndex",
+      data: Seed.find().map (doc, index, cursor) ->
+        _.extend doc, index: index + 1
   show: ->
+    seed = Seed.findOne(@params._id)
+    document.title = "#{seed.who}の#{seed.what}問題を解決するアイディア"
     Session.set 'current_seed_id',@params._id
-    @render "SeedShow", data: Seed.findOne(@params._id)
+    @render "SeedShow", data: seed
 
   new: ->
     @render "SeedNew"
