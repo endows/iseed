@@ -3,6 +3,12 @@
     <div class="row-fluid">
       <h1>{{_id}}</h1>
       <p>Find me in client/views/seeds/show.html</p>
+      <span>このサービスを使ってみたいですか？</span>
+      <button id='yes' class='btn btn-primary'>YES</button>
+      <button id='no' class='btn btn-primary'>No</button>
+      {{#if voted}}
+      <h1>THIS IS グラフ</h1>
+      {{/if}}
     </div>
   </div>
 </template>

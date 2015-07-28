@@ -7,6 +7,7 @@ SeedsController = ApplicationController.extend
     @render "SeedIndex", data: Seed.find()
 
   show: ->
+    Session.set 'current_seed_id',@params._id
     @render "SeedShow", data: Seed.findOne(@params._id)
 
   new: ->
