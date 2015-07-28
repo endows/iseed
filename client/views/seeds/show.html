@@ -1,14 +1,60 @@
 <template name="SeedShow">
   <div class="container">
     <div class="row-fluid">
-      <h1>{{_id}}</h1>
-      <p>Find me in client/views/seeds/show.html</p>
-      <span>このサービスを使ってみたいですか？</span>
-      <button id='yes' class='btn btn-primary'>YES</button>
-      <button id='no' class='btn btn-primary'>No</button>
-      {{#if voted}}
-      <h1>THIS IS グラフ</h1>
-      {{/if}}
+      <div class='col-md-10'>
+        <div class='list-group'>
+
+          <div class='list-group-item'>
+            <p>
+              だれのためのサービス？
+            </p>
+            <h2>{{who}}</h2>
+          </div>
+
+          <div class='list-group-item'>
+            <p>
+              どんな問題を解決する？
+            </p>
+            <h2>{{what}}</h2>
+          </div>
+
+
+          <div class='list-group-item'>
+            <p>
+              どうやって解決する？
+            </p>
+            <h2>{{how}}</h2>
+          </div>
+
+
+          <div class='list-group-item'>
+            {{#if voted}}
+            <p>調査結果</p>
+            <h1>
+              <small>使ってみたい:</small>{{yes}}
+              <small>人</small>
+            </h1>
+            <h1>
+              <small>使いたくない:</small>{{yes}}
+              <small>人</small>
+            </h1>
+            <h1>
+              <small>無回答:</small>{{yes}}
+              <small>人</small>
+            </h1>
+            {{else}}
+            <span>このサービスを使ってみたいですか？</span>
+            <button id='yes' class='btn btn-primary'>YES</button>
+            <button id='no' class='btn btn-primary'>No</button>
+            {{/if}}
+          </div>
+
+        </div>
+
+
+
+      </div>
+
     </div>
   </div>
 </template>
