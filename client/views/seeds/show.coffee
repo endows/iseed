@@ -23,6 +23,11 @@ Template.SeedShow.rendered = ->
   setInterval ->
     time = time - 1
     document.querySelector('#time_bar').style.width = "#{time}%"
+    if time is 0
+      Seed.update {_id:Session.get('current_seed_id')},{$inc:{none:1}},->
+        location.reload()
+      localStorage[Session.get('current_seed_id')] = 'voted'
+
   ,100
   seed = Seed.findOne Session.get('current_seed_id')
   doughnutData = [

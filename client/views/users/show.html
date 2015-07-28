@@ -1,8 +1,20 @@
 <template name="UserShow">
   <div class="container">
     <div class="row-fluid">
-      <h1>{{_id}}</h1>
-      <p>Find me in client/views/users/show.html</p>
+      <div class='text-center'>
+        <img src={{user.profile.image}}>
+
+      </div>
+      {{#each seeds}}
+      <a target='_blank' href="/seeds/{{_id}}">
+        <h1>
+          {{who}}<small>の</small>
+          {{what}}<small>を</small>
+          {{how}}
+          <small>で解決するアイディア</small>
+        </h1>
+      </a>
+      {{/each}}
     </div>
   </div>
 </template>
