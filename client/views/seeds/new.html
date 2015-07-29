@@ -1,16 +1,29 @@
 <template name="SeedNew">
+  {{#if currentUser}}
   <div class="container">
     <div class="row-fluid">
       <h1>New Seed</h1>
-      {{#autoForm collection="Seed" type="insert" id="new-seed-form"}}
-        {{> SeedFields}}
-        <button type="submit" class="btn btn-primary">
-          <span class="glyphicon glyphicon-plus"></span>
-          作成
-        </button>
-      {{/autoForm}}
-      {{> reader who=who what=what keyword=keyword}}
+      {{#autoForm collection="Seed" type="insert" id="new-seed-form"}} {{> SeedFields}}
+      <button type="submit" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        作成
+      </button>
+      {{/autoForm}} {{> reader who=who what=what keyword=keyword}}
 
     </div>
   </div>
+  {{else}}
+  <div class='list-group-item text-center'>
+    <p>
+      <button onclick='Meteor.loginWithTwitter()' class='btn btn-primary'>
+        <i class='fa fa-twitter'></i> Twitterでログイン
+      </button>
+    </p>
+
+    <i class="fa fa-arrow-down"></i>
+    <h1>3つの質問に答える（1分以内）</h1>
+    <i class="fa fa-arrow-down"></i>
+    <h1>作成完了</h1>
+  </div>
+  {{/if}}
 </template>
