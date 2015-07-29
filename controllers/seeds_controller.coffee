@@ -5,10 +5,11 @@ SeedsController = ApplicationController.extend
   ]
 
   index: ->
-    document.title = 'iSeed'
+    document.title = 'iSeed アイディアを育てるSNS'
     @render "SeedIndex",
-      data: Seed.find().map (doc, index, cursor) ->
-        _.extend doc, index: index + 1
+      data:
+        users:User.find()
+
   show: ->
     seed = Seed.findOne(@params._id)
     document.title = "#{seed.who}の#{seed.what}問題を#{seed.keyword}で解決するアイディア"
