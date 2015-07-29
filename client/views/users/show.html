@@ -7,13 +7,10 @@
       </div>
       {{#each seeds}}
       <a target='_blank' href="/seeds/{{_id}}">
-        <h1>
-          {{who}}<small>の</small>
-          {{what}}<small>を</small>
-          <small>解決するアイディア</small>
-        </h1>
+        {{> reader who=who keyword=keyword what=what}}
       </a>
       {{/each}}
     </div>
   </div>
+
 </template>

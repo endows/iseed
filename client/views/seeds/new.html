@@ -6,16 +6,11 @@
         {{> SeedFields}}
         <button type="submit" class="btn btn-primary">
           <span class="glyphicon glyphicon-plus"></span>
-          Create
+          作成
         </button>
       {{/autoForm}}
-      <h1>
-        {{who}}
-        <small>の</small>
-        {{what}}
-        <small>を</small>
-        <small>解決するアイディア</small>
-      </h1>
+      {{> reader who=who what=what keyword=keyword}}
+
     </div>
   </div>
 </template>

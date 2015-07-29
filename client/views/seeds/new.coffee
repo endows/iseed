@@ -3,8 +3,8 @@ Template.SeedNew.helpers
     Session.get 'who'
   'what':->
     Session.get 'what'
-  'how':->
-    Session.get 'how'
+  'keyword':->
+    Session.get 'keyword'
 
 Template.SeedNew.events
 
@@ -16,10 +16,10 @@ AutoForm.hooks
 Template.SeedNew.rendered = ->
   Session.set 'who','こんな人々'
   Session.set 'what','あんな問題'
-  Session.set 'how','あれで'
+  Session.set 'keyword','あれで'
 
   setInterval ->
-    Session.set 'how', "$('#how').val()"
+    Session.set 'keyword', $('#keyword').val() || Session.get('keyword')
     Session.set 'what', $('#what').val() || Session.get('what')
     Session.set 'who',  $('#who').val() || Session.get('who')
   ,100
