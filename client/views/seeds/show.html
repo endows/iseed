@@ -2,6 +2,21 @@
   <div class="container">
     <div class="row-fluid">
       <div class='col-md-10'>
+       {{> flashMessages}}
+        <script>
+          ! function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+              p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+              js = d.createElement(s);
+              js.id = id;
+              js.src = p + '://platform.twitter.com/widgets.js';
+              fjs.parentNode.insertBefore(js, fjs);
+            }
+          }(document, 'script', 'twitter-wjs');
+        </script>
+
+
         <div class='list-group'>
           <div class='list-group-item'>
             <p>
@@ -56,8 +71,7 @@
               <button id='yes' class='btn btn-primary btn-lg'>YES</button>
               <button id='no' class='btn btn-danger btn-lg'>No</button>
             </div>
-            <br />
-            {{/if}}
+            <br /> {{/if}}
           </div>
         </div>
       </div>
@@ -65,12 +79,10 @@
   </div>
   <div class='text-center'>
     <p>
-      <i class="fa fa-copyright"></i>
-      アイディアの権利はすべて、
+      <i class="fa fa-copyright"></i> アイディアの権利はすべて、
       <a href="https://twitter.com/intent/user?user_id={{user}}">
         {{user}}
-      </a>
-      氏に帰属します。
+      </a> 氏に帰属します。
     </p>
   </div>
 </template>
