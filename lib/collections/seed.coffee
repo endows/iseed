@@ -7,11 +7,11 @@ Seed.attachSchema new SimpleSchema {
     max: 50
   how:
     type: String
-    label: "どんな問題を　(100文字以内)"
     max: 100
+    label: "どうやって解決する？　(100文字以内)"
   what:
     type: String
-    label: "どうやって解決する？　(100文字以内)"
+    label: "どんな問題を　(100文字以内)"
     max: 100
   yes:
     type: Number
