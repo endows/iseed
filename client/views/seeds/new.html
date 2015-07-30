@@ -9,7 +9,7 @@
           <input type="checkbox" checked id='tweet_flag'> ツイートする
         </label>
       </div>
-      <button type="submit" class="btn btn-primary" data-loading-text="作成中..少し時間かかります">
+      <button type="submit" class="btn btn-primary" onclick="$('#myModal').modal()">
         <span class="glyphicon glyphicon-plus"></span>
         作成
       </button>
@@ -31,4 +31,17 @@
     <h1>作成完了</h1>
   </div>
   {{/if}}
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+          <p>
+            処理中
+          </p>
+          <i class="fa fa-refresh fa-spin fa-5x"></i>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
