@@ -4,7 +4,12 @@
     <div class="row-fluid">
       <h1>New Seed</h1>
       {{#autoForm collection="Seed" type="insert" id="new-seed-form"}} {{> SeedFields}}
-      <button type="submit" class="btn btn-primary">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" checked id='tweet_flag'> ツイートする
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary" data-loading-text="作成中..少し時間かかります">
         <span class="glyphicon glyphicon-plus"></span>
         作成
       </button>
